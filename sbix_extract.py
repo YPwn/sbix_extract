@@ -18,6 +18,8 @@ def convertGlyphName(name):
         'M': "2642"
     }
 
+    isSnowboarder = re.match(r"^u1F3C2$", name)
+    isPersonInBed = re.match(r"^u1F6CC$", name)
     isFlag = re.match(r"""^u1F1(E[6-9A-F]|F[0-9A-F])_"""
         r"""u1F1(E[6-9A-F]|F[0-9A-F])$""", name)
     isHoldingHands = re.match(r"""^u1F46[89]_u1F91D_u1F46[89]\."""
@@ -40,7 +42,13 @@ def convertGlyphName(name):
     isSingleGender = re.match(r"^u[0-9A-F]{1,5}\.[MW]$", name)
     isSingle = re.match(r"^u[0-9A-F]{1,5}$", name)
 
-    if isFlag:
+    if isSnowboarder:
+        return ["u1f3c2", "u1f3c2_1f3fb", "u1f3c2_1f3fc",
+            "u1f3c2_1f3fd", "u1f3c2_1f3fe", "u1f3c2_1f3ff"]
+    elif isPersonInBed:
+        return ["u1f6cc", "u1f6cc_1f3fb", "u1f6cc_1f3fc",
+            "u1f6cc_1f3fd", "u1f6cc_1f3fe", "u1f6cc_1f3ff"]
+    elif isFlag:
         if name == "u1F1F8_u1F1ED":
             return ["u1f1f8_1f1ed", "u1f1e6_1f1e8", "u1f1f9_1f1e6"]
         elif name == "u1F1F3_u1F1F4":
