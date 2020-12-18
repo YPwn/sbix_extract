@@ -1,5 +1,6 @@
 # https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6sbix.html
 # requires fonttools lib (`pip install fonttools>=4.7.0`)
+# YPwn was here. 2020
 import sys
 import os
 import shutil
