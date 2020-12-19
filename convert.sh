@@ -16,5 +16,6 @@ fi
 
 for f in $(find "$1" -type f -name *.emjc); do
     "$decoder" "$f" | grep -v Dimensions
+    rm -f "$f"
 done
 
